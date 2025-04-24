@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>kr.or.ddit</groupId>
+	<artifactId>MVN_Web01</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<properties>
+		<java-version>21</java-version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+				<!-- ${} placeholder: 프로퍼티명으로 값을 대체하는 방법 -->
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+		<dependency>
+		    <groupId>jakarta.servlet</groupId>
+		    <artifactId>jakarta.servlet-api</artifactId>
+		    <version>6.0.0</version>
+		    <scope>provided</scope>
+		    <!-- compile scope: 컴파일, 테스트, 배포, 실행 통틀어 빌드의 전 과정에서 사용됨. -->
+		    <!-- test: 일반 환경에서는 사용 불가. 배포할 때도 버리고 떠남. -->
+		    <!-- provided: 개발,테스트할 때 쓰다가 배포하면서 버리고 감. ∵실행환경에서도 제공하고 있기 때문. -->
+		    <!-- runtime: 개발,컴파일할 때는 ㅈ도 쓸모없다가, 배포할 때 끼워서 데려감. 실행환경에서 필수기 때문. -->
+		</dependency>
+<!-- 
+	servlet 3.0 이상부터는 web.xml 파일이 필요가 없다. (web.xml = 배포서술자; Deployment descriptor)
+-->
+<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp/jakarta.servlet.jsp-api -->
+		<dependency>
+		    <groupId>jakarta.servlet.jsp</groupId>
+		    <artifactId>jakarta.servlet.jsp-api</artifactId>
+		    <version>3.1.1</version>
+		    <scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
